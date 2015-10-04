@@ -28,6 +28,25 @@ namespace LoginScreen
 		{
 		}
 		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int slide_right = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int slide_up = 2130968577;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -44,11 +63,11 @@ namespace LoginScreen
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int blue_normal = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int blue_normal = 2131034113;
 			
-			// aapt resource value: 0x7f040000
-			public const int blue_pressed = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int blue_pressed = 2131034112;
 			
 			static Color()
 			{
@@ -63,11 +82,11 @@ namespace LoginScreen
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int corner_radius = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int corner_radius = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int layer_padding = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int layer_padding = 2131099649;
 			
 			static Dimension()
 			{
@@ -119,20 +138,32 @@ namespace LoginScreen
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070001
-			public const int btn_login = 2131165185;
+			// aapt resource value: 0x7f090003
+			public const int btn_dialog_registreer = 2131296259;
 			
-			// aapt resource value: 0x7f070002
-			public const int btn_registreer = 2131165186;
+			// aapt resource value: 0x7f090005
+			public const int btn_login = 2131296261;
 			
-			// aapt resource value: 0x7f070000
-			public const int ilogo = 2131165184;
+			// aapt resource value: 0x7f090006
+			public const int btn_registreer = 2131296262;
 			
-			// aapt resource value: 0x7f070004
-			public const int progressBar1 = 2131165188;
+			// aapt resource value: 0x7f090004
+			public const int ilogo = 2131296260;
 			
-			// aapt resource value: 0x7f070003
-			public const int relativelayout1 = 2131165187;
+			// aapt resource value: 0x7f090008
+			public const int progressBar1 = 2131296264;
+			
+			// aapt resource value: 0x7f090007
+			public const int relativelayout1 = 2131296263;
+			
+			// aapt resource value: 0x7f090001
+			public const int txt_mail = 2131296257;
+			
+			// aapt resource value: 0x7f090000
+			public const int txt_voornaam = 2131296256;
+			
+			// aapt resource value: 0x7f090002
+			public const int txt_wachtwoord = 2131296258;
 			
 			static Id()
 			{
@@ -148,7 +179,10 @@ namespace LoginScreen
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Dialog_registreer = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{
@@ -163,11 +197,11 @@ namespace LoginScreen
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int ApplicationName = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int ApplicationName = 2131165185;
 			
-			// aapt resource value: 0x7f060000
-			public const int Hello = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int Hello = 2131165184;
 			
 			static String()
 			{
@@ -175,6 +209,22 @@ namespace LoginScreen
 			}
 			
 			private String()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f080000
+			public const int dialog_animatie = 2131230720;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}
