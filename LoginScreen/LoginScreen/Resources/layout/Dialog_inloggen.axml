@@ -13,7 +13,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:hint="Email adres"
         android:paddingLeft="10dp"
         android:textColorHint="#d3d3d3"
