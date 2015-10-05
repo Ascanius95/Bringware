@@ -141,32 +141,41 @@ namespace LoginScreen
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090003
-			public const int btn_dialog_registreer = 2131296259;
-			
-			// aapt resource value: 0x7f090005
-			public const int btn_login = 2131296261;
+			// aapt resource value: 0x7f090002
+			public const int btn_dialog_inloggen = 2131296258;
 			
 			// aapt resource value: 0x7f090006
-			public const int btn_registreer = 2131296262;
-			
-			// aapt resource value: 0x7f090004
-			public const int ilogo = 2131296260;
+			public const int btn_dialog_registreer = 2131296262;
 			
 			// aapt resource value: 0x7f090008
-			public const int progressBar1 = 2131296264;
+			public const int btn_login = 2131296264;
+			
+			// aapt resource value: 0x7f090009
+			public const int btn_registreer = 2131296265;
 			
 			// aapt resource value: 0x7f090007
-			public const int relativelayout1 = 2131296263;
+			public const int ilogo = 2131296263;
 			
-			// aapt resource value: 0x7f090001
-			public const int txt_mail = 2131296257;
+			// aapt resource value: 0x7f09000b
+			public const int progressBar1 = 2131296267;
+			
+			// aapt resource value: 0x7f09000a
+			public const int relativelayout1 = 2131296266;
 			
 			// aapt resource value: 0x7f090000
-			public const int txt_voornaam = 2131296256;
+			public const int txt_login_email = 2131296256;
 			
-			// aapt resource value: 0x7f090002
-			public const int txt_wachtwoord = 2131296258;
+			// aapt resource value: 0x7f090001
+			public const int txt_login_wachtwoord = 2131296257;
+			
+			// aapt resource value: 0x7f090004
+			public const int txt_mail = 2131296260;
+			
+			// aapt resource value: 0x7f090003
+			public const int txt_voornaam = 2131296259;
+			
+			// aapt resource value: 0x7f090005
+			public const int txt_wachtwoord = 2131296261;
 			
 			static Id()
 			{
@@ -182,10 +191,13 @@ namespace LoginScreen
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Dialog_registreer = 2130903040;
+			public const int Dialog_inloggen = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Dialog_registreer = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
 			
 			static Layout()
 			{
