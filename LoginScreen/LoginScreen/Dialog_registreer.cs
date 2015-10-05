@@ -18,12 +18,12 @@ namespace LoginScreen
     {
         private string mVoornaam, mEmail, mWachtwoord;
         private int mId;
-        public RegistreerEvent(int Id, string Voornaam, string Email, string Wachtwoord) : base()
+        public RegistreerEvent(int id, string voornaam, string email, string wachtwoord) : base()
         {
-            mId = Id;
-            mVoornaam = Voornaam;
-            mEmail = Email;
-            mWachtwoord = Wachtwoord;
+            Id = id;
+            Voornaam = voornaam;
+            Email = email;
+            Wachtwoord = wachtwoord;
         }
         
         public string Voornaam
@@ -95,10 +95,12 @@ namespace LoginScreen
                 string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
                 int newID = 0;
 
-                int.TryParse(id, out newID); //Cast the id to an integer
+               // int.TryParse(id, out newID); //Cast the id to an integer
 
                 if (registreerCompleet != null)
                 {
+                    Console.WriteLine(id);
+                    Console.WriteLine("GELUKT");
                     //Broadcast event
                     registreerCompleet.Invoke(this, new RegistreerEvent(newID, txt_voornaam.Text, txt_email.Text, txt_wachtwoord.Text));
                 }
@@ -107,6 +109,7 @@ namespace LoginScreen
             });
 
         }
+      
         public override void OnActivityCreated(Bundle savedInstanceState) // dialog animatie
         {
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle); // titel bar onzichtbaar maken

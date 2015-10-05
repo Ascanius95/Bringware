@@ -35,17 +35,19 @@ namespace LoginScreen
 
         private void Regdialog_registreerCompleet(object sender, RegistreerEvent e)
         {
-            /* mooie code om loading icon te laten draaien terwijl de thread slaapt */
-            mProgressbar.Visibility = ViewStates.Visible;
-            Thread thread = new Thread(ActLikeRequest);
-            thread.Start();
-            
-
+            ShowAlert(e.Email + " " + e.Voornaam);
         }
-        private void ActLikeRequest()
+        public void ShowAlert(string str)
         {
-            Thread.Sleep(3000);
-            RunOnUiThread(() => { mProgressbar.Visibility = ViewStates.Invisible; }); // #mooiecode
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.SetTitle(str);
+            alert.SetPositiveButton("OK", (senderAlert, args) => {
+                // ja code
+            });
+
+            RunOnUiThread(() => {
+                alert.Show();
+            });
         }
     }
 }
