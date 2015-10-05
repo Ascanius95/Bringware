@@ -21,7 +21,7 @@ namespace LoginScreen
 
             /* Layout attributen toewijzen aan code */ 
             SetContentView(Resource.Layout.Main);
-            mBtnLogin = FindViewById<Button>(Resource.Id.btn_registreer);
+            mBtnLogin = FindViewById<Button>(Resource.Id.btn_login);
             mBtnRegistreer = FindViewById<Button>(Resource.Id.btn_registreer);
             mProgressbar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
 
@@ -35,14 +35,22 @@ namespace LoginScreen
 
                 regdialog.registreerCompleet += Regdialog_registreerCompleet;
             };
-            mBtnRegistreer.Click += (object sender, EventArgs args) =>
+            mBtnLogin.Click += (object sender, EventArgs args) =>
             {
-                FragmentTransaction transaction = FragmentTransaction.BeginTransaction();
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
                 Dialog_inloggen inlogdialog = new Dialog_inloggen();
+                inlogdialog.Show(transaction, "dialog fragment");
+
+                inlogdialog.logincompleet += Inlogdialog_logincompleet;
 
 
             };
 
+        }
+
+        private void Inlogdialog_logincompleet(object sender, LoginEvent e)
+        {
+          //  code hier als ingelogd
         }
 
         private void Regdialog_registreerCompleet(object sender, RegistreerEvent e)
