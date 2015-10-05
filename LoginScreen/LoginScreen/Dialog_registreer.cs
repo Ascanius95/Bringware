@@ -9,19 +9,23 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace LoginScreen
 {
     public class RegistreerEvent : EventArgs
     {
         private string mVoornaam, mEmail, mWachtwoord;
-        public RegistreerEvent(string Voornaam, string Email, string Wachtwoord) : base()
+        private int mId;
+        public RegistreerEvent(int Id, string Voornaam, string Email, string Wachtwoord) : base()
         {
-            this.Voornaam = Voornaam;
-            this.Email = Email;
-            this.Wachtwoord = Wachtwoord;
+            mId = Id;
+            mVoornaam = Voornaam;
+            mEmail = Email;
+            mWachtwoord = Wachtwoord;
         }
-
+        
         public string Voornaam
         {
             get { return mVoornaam; }
@@ -39,6 +43,12 @@ namespace LoginScreen
             get { return mWachtwoord; }
             set { mWachtwoord = value; }
         }
+        
+        public int Id
+        {
+            get { return mId; }
+            set { mId = value; }
+        }
 
 
     }
@@ -46,6 +56,7 @@ namespace LoginScreen
     {
         private EditText txt_voornaam, txt_email, txt_wachtwoord;
         private Button btn_registreer;
+
         public event EventHandler<RegistreerEvent> registreerCompleet;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -65,10 +76,37 @@ namespace LoginScreen
         private void Btn_registreer_Click(object sender, EventArgs e)
         {
             /* Gebruiker klikte op registreer */
-            registreerCompleet.Invoke(this, new RegistreerEvent(txt_voornaam.Text, txt_email.Text, txt_wachtwoord.Text));
-            this.Dismiss();
-        }
 
+            WebClient client = new WebClient();
+            Uri uri = new Uri("http://bringmans.be/Flyer_gebruiker.php");
+            NameValueCollection parameters = new NameValueCollection();
+
+            parameters.Add("naam", txt_voornaam.Text);
+            parameters.Add("email", txt_email.Text);
+            parameters.Add("wachtwoord", txt_wachtwoord.Text);
+
+            client.UploadValuesCompleted += client_UploadValuesCompleted;
+            client.UploadValuesAsync(uri, parameters);
+        }
+        void client_UploadValuesCompleted(object sender, UploadValuesCompletedEventArgs e)
+        {
+            Activity.RunOnUiThread(() =>
+            {
+                string id = Encoding.UTF8.GetString(e.Result); //Get the data echo backed from PHP
+                int newID = 0;
+
+                int.TryParse(id, out newID); //Cast the id to an integer
+
+                if (registreerCompleet != null)
+                {
+                    //Broadcast event
+                    registreerCompleet.Invoke(this, new RegistreerEvent(newID, txt_voornaam.Text, txt_email.Text, txt_wachtwoord.Text));
+                }
+
+                this.Dismiss();
+            });
+
+        }
         public override void OnActivityCreated(Bundle savedInstanceState) // dialog animatie
         {
             Dialog.Window.RequestFeature(WindowFeatures.NoTitle); // titel bar onzichtbaar maken

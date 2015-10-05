@@ -117,13 +117,16 @@ namespace LoginScreen
 			public const int logo_bringmans_retina = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int progressbarStijl = 2130837509;
+			public const int monoandroidsplash = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int rect_normal = 2130837510;
+			public const int progressbarStijl = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int rect_pressed = 2130837511;
+			public const int rect_normal = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int rect_pressed = 2130837512;
 			
 			static Drawable()
 			{
@@ -215,6 +218,9 @@ namespace LoginScreen
 		
 		public partial class Style
 		{
+			
+			// aapt resource value: 0x7f080001
+			public const int Mono_Android_Theme_Splash = 2131230721;
 			
 			// aapt resource value: 0x7f080000
 			public const int dialog_animatie = 2131230720;

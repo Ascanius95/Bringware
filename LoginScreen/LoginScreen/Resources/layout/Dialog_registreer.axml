@@ -14,7 +14,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="40dp"
-        android:hint="Voornaam"
+        android:hint="Naam"
         android:paddingLeft="10dp"
         android:textColorHint="#d3d3d3"
         android:textColor="#2F4F4F" />

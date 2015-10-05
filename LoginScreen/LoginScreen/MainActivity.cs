@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Java.Lang;
+using System.Collections.Generic;
 
 namespace LoginScreen
 {
@@ -34,10 +35,11 @@ namespace LoginScreen
 
         private void Regdialog_registreerCompleet(object sender, RegistreerEvent e)
         {
-            /* mooie code om loading icon te laten draaien terwijl de thrad slaap */
+            /* mooie code om loading icon te laten draaien terwijl de thread slaapt */
             mProgressbar.Visibility = ViewStates.Visible;
             Thread thread = new Thread(ActLikeRequest);
             thread.Start();
+            
 
         }
         private void ActLikeRequest()
