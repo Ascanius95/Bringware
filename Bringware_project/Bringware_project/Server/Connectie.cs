@@ -26,7 +26,7 @@ namespace Bringware_project.Server
         {
             server = "176.31.191.246";
             database = "BringWare";
-            uid = "****";
+            uid = "*****";
             password = "*****";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
