@@ -14,12 +14,12 @@ using System.Collections.Specialized;
 
 namespace LoginScreen
 {
-    public class LoginEvent : EventArgs
+    public class LoginEvent : EventArgs 
     {
         private string mEmail, mWachtwoord;
 
         /* constructor */
-        public LoginEvent(string email, string wachtwoord)
+        public LoginEvent(string email, string wachtwoord) : base()
         {
             Email = email;
             Wachtwoord = wachtwoord;
@@ -46,7 +46,6 @@ namespace LoginScreen
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
-
             /* Layout toewijzen */
             var view = inflater.Inflate(Resource.Layout.Dialog_inloggen, container, false);
             /* Attributen uit layout halen */

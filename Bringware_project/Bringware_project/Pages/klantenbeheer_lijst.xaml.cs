@@ -23,6 +23,9 @@ namespace Bringware_project.Pages
         public klantenbeheer_lijst()
         {
             InitializeComponent();
+
+            // code hier
+
         }
     }
 }

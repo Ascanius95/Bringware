@@ -56,7 +56,7 @@ namespace LoginScreen
     {
         private EditText txt_voornaam, txt_email, txt_wachtwoord;
         private Button btn_registreer;
-
+        
         public event EventHandler<RegistreerEvent> registreerCompleet;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

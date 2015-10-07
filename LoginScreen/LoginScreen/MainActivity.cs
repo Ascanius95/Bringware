@@ -26,15 +26,6 @@ namespace LoginScreen
             mProgressbar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
 
             /* Click events */
-            mBtnRegistreer.Click += (object sender, EventArgs args) => //Click methode in zelfde methode
-            {
-                // dialog weergeven
-                FragmentTransaction transaction = FragmentManager.BeginTransaction();
-                Dialog_registreer regdialog = new Dialog_registreer();
-                regdialog.Show(transaction, "dialog fragment");
-
-                regdialog.registreerCompleet += Regdialog_registreerCompleet;
-            };
             mBtnLogin.Click += (object sender, EventArgs args) =>
             {
                 FragmentTransaction transaction = FragmentManager.BeginTransaction();
@@ -45,6 +36,16 @@ namespace LoginScreen
 
 
             };
+            mBtnRegistreer.Click += (object sender, EventArgs args) => //Click methode in zelfde methode
+            {
+                // dialog weergeven
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                Dialog_registreer regdialog = new Dialog_registreer();
+                regdialog.Show(transaction, "dialog fragment");
+
+                regdialog.registreerCompleet += Regdialog_registreerCompleet;
+            };
+         
 
         }
 

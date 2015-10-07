@@ -11,7 +11,7 @@ namespace Bringware_project
     public class SampleFormViewModel
             : NotifyPropertyChanged, IDataErrorInfo
     {
-        private string firstName = "John";
+        private string firstName;
         private string lastName;
 
         public string FirstName
