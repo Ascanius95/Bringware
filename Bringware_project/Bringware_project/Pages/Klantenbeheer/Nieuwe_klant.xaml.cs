@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bringware_project.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,29 @@ namespace Bringware_project.Pages.Klantenbeheer
         public nieuwe_klant()
         {
             InitializeComponent();
+        }
+
+        private void btn_submit_Click(object sender, RoutedEventArgs e)
+        {
+            Query voegtoe = new Query();
+            voegtoe.Nieuwe_klant(txt_voornaam.Text, txt_achternaam.Text, txt_adres.Text, txt_postcode.Text, "gemeenteplaceholder", txt_gsm.Text, txt_email.Text, txt_btw.Text, SoortProject(cmb_project.Text), AangenomenCheck(chk_aangenomen));
+        }
+
+        public char SoortProject(string item)
+        {
+            return item[0];
+        }
+        public Boolean AangenomenCheck(CheckBox check)
+        {
+            if(check.IsChecked.Value == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
     }
 }

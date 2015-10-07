@@ -67,7 +67,7 @@
                     <StackPanel>
                         <Label Content="Postcode" Target="{Binding ElementName=txt_postcode}"/>
                         <TextBox x:Name="txt_postcode" Width="200" />
-                        <ComboBox x:Name="ComboState" Width="200">
+                        <ComboBox x:Name="cmb_gemeente" Width="200">
                             <ComboBoxItem>Riemst</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
@@ -88,7 +88,7 @@
                         <CheckBox x:Name="chk_aangenomen" Content="Project alreeds aangenomen" />
                     </StackPanel>
 
-                    <Button Name="btn_submit" Content="Klant toevoegen" Margin="100,16,0,0" HorizontalAlignment="Left" />
+                    <Button Name="btn_submit" Content="Klant toevoegen" Margin="100,16,0,0" HorizontalAlignment="Left" Click="btn_submit_Click" />
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
