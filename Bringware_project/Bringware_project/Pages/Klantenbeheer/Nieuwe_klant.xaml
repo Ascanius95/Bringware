@@ -66,8 +66,8 @@
                     </StackPanel>
                     <StackPanel>
                         <Label Content="Postcode" Target="{Binding ElementName=txt_postcode}"/>
-                        <TextBox x:Name="txt_postcode" Width="200" />
-                        <ComboBox x:Name="cmb_gemeente" Width="200">
+                        <TextBox x:Name="txt_postcode" Width="200" TextChanged="txt_postcode_TextChanged" />
+                        <ComboBox x:Name="cmb_Gem" Width="200" DataContextChanged="cmb_Gem_DataContextChanged" DropDownOpened="cmb_Gem_DropDownOpened">
                             <ComboBoxItem>Riemst</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>

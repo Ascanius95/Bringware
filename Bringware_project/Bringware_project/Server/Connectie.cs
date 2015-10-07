@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Bringware_project.Server
 {
-    public abstract class Connectie
+    public class Connectie
     {
         public MySqlConnection connection;
         private string server;

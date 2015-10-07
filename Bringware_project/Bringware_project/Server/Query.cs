@@ -36,10 +36,10 @@ namespace Bringware_project.Server
             }
         }
 
-        public bool Nieuwe_klant(string voornaam, string achternaam, string adres, string postcode, string gemeente, string tel, string mail, string btw_nr, char soort_project, bool aangenomen)
+        public bool Nieuwe_klant(string voornaam, string achternaam, string adres, string postcode, string gemeente, string tel, string mail, string btw_nr, char soort_project, int aangenomen)
         {
             /* De query */
-            string query = "INSERT INTO klantenbeheer_particulier (voornaam,achternaam,adres,postcode,gemeente,tel,mail,datum,btw_nr,soort_project,aangenomen) VALUES('" + voornaam + "','" + achternaam + "','" + adres + "','" + postcode + "','" + gemeente + "','" + tel + "','" + mail + "','@1','" + btw_nr + "','" + soort_project + "','" + aangenomen +"')";
+            string query = "INSERT INTO klantenbeheer_particulier (voornaam,achternaam,adres,postcode,gemeente,tel,mail,datum,btw_nr,soort_project,aangenomen) VALUES('" + voornaam + "','" + achternaam + "','" + adres + "','" + postcode + "','" + gemeente + "','" + tel + "','" + mail + "','@1','" + btw_nr + "','" + soort_project + "','" + aangenomen + "')";
             /* Einde query */
             if (this.Open() == true)
             {
