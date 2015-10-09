@@ -10,9 +10,9 @@ namespace Bringware_project.Server
 {
     class Query : Connectie
     {
-        public void Nieuwe_Edwin(string naam)
+        public void Nieuwe_Aannemer(string bedrijfsnaam, string voornaam, string achternaam, string adres, string postcode, string gemeente, string tel, string mail, string btw_nr)
         {
-            string query = "INSERT INTO klantenbeheer_particulier (voornaam) VALUES('" + naam + "')";
+            string query = "INSERT INTO klantenbeheer_aannemer (bedrijfsnaam, voornaam, achternaam, adres, postcode, gemeente, tel, mail, btw_nr) VALUES('" + bedrijfsnaam + "','" + voornaam + "','" + achternaam + "','" + adres + "','" + postcode + "','" + gemeente + "','" + tel + "','" + mail + "','" + btw_nr + "')";
             if (this.Open() == true)
             {
                 MessageBox.Show("Verbinding gelukt");

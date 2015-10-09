@@ -12,7 +12,7 @@
             <mui:ModernTab.Links>
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="Nieuwe klant " Source="/Pages/Klantenbeheer/Nieuwe_klant.xaml"/>
-                <mui:Link DisplayName="Nieuwe aannemer" />
+                <mui:Link DisplayName="Nieuwe aannemer" Source="/Pages/Klantenbeheer/Nieuwe_Aannemer.xaml"/>
                 <mui:Link DisplayName="Bekijk klanten" />
                 <mui:Link DisplayName="Bekijk aannemers" />
             </mui:ModernTab.Links>
