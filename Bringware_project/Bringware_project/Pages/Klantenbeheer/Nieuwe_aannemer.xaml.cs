@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 namespace Bringware_project.Pages.Klantenbeheer
 {
     /// <summary>
-    /// Interaction logic for nieuwe_klant.xaml
+    /// Interaction logic for Nieuwe_aannemer.xaml
     /// </summary>
-    public partial class nieuwe_klant : UserControl
+    public partial class Nieuwe_aannemer : UserControl
     {
-        public nieuwe_klant()
+        public Nieuwe_aannemer()
         {
             InitializeComponent();
         }
@@ -30,26 +30,12 @@ namespace Bringware_project.Pages.Klantenbeheer
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
             Query voegtoe = new Query();
-            voegtoe.Nieuwe_klant(txt_voornaam.Text, txt_achternaam.Text, txt_adres.Text, txt_postcode.Text, "gemeenteplaceholder", txt_gsm.Text, txt_email.Text, txt_btw.Text, SoortProject(cmb_project.Text), AangenomenCheck(chk_aangenomen));
+            voegtoe.Nieuwe_Aannemer(txt_bedrijfsnaam.Text ,txt_voornaam.Text, txt_achternaam.Text, txt_adres.Text, txt_postcode.Text, cmb_Gem.Text, txt_gsm.Text, txt_email.Text, txt_btw.Text);
         }
 
-        public char SoortProject(string item)
-        {
-            return item[0];
-        }
-        public int AangenomenCheck(CheckBox check)
-        {
-            if(check.IsChecked.Value)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-            
-        }
-        /* Gemeentes automatisch inladen in combobox a.d.h.v. postcode */ 
+        
+        
+        /* Gemeentes automatisch inladen in combobox a.d.h.v. postcode */
         public void updateGemeente()
         {
             string query = "SELECT Gemeente, PC FROM Gemeentes WHERE PC = '" + txt_postcode.Text + "'";
@@ -76,7 +62,7 @@ namespace Bringware_project.Pages.Klantenbeheer
                 updateGemeente();
                 cmb_Gem.IsDropDownOpen = true;
             }
-        }  
+        }
 
         private void cmb_Gem_DropDownOpened(object sender, EventArgs e)
         {
@@ -87,7 +73,7 @@ namespace Bringware_project.Pages.Klantenbeheer
 
         private void txt_postcode_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(txt_postcode.Text.Length == 4)
+            if (txt_postcode.Text.Length == 4)
             {
                 updateGemeente();
                 cmb_Gem.IsDropDownOpen = true;

@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Bringware_project.Server
 {
-    class Connectie
+    public class Connectie
     {
         public MySqlConnection connection;
         private string server;
@@ -24,10 +24,10 @@ namespace Bringware_project.Server
         //Initialize values
         private void Initialiseer()
         {
-            server = "http://bringmans.be";
+            server = "176.31.191.246";
             database = "BringWare";
-            uid = "nav";
-            password = "Royisgood147";
+            uid = "*****";
+            password = "*******";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
